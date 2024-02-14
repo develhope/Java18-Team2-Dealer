@@ -19,6 +19,7 @@ public class Vehicles {
 
 	public Vehicles(String type, String brand, String model, Integer displacement, String color, Integer power, String transmissionType,
 	                Integer yearOfRegistration, String fuelType, int price, int discountPrice, String accessories, boolean condition, boolean available) {
+		this.type = type;
 		this.brand = brand;
 		this.model = model;
 		this.displacement = displacement;
