@@ -1,6 +1,15 @@
 package com.develhope.spring;
 
 public class Vehicles {
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	private String type;
 	private String brand;
 	private String model;
 	private Integer displacement;
@@ -15,7 +24,7 @@ public class Vehicles {
 	private boolean condition;
 	private boolean available;
 
-	public Vehicles(String brand, String model, Integer displacement, String color, Integer power, String transmissionType,
+	public Vehicles(String type, String brand, String model, Integer displacement, String color, Integer power, String transmissionType,
 	                Integer yearOfRegistration, String fuelType, int price, int discountPrice, String accessories, boolean condition, boolean available) {
 		this.brand = brand;
 		this.model = model;
@@ -134,5 +143,25 @@ public class Vehicles {
 
 	public void setAvailable(boolean available) {
 		this.available = available;
+	}
+
+	@Override
+	public String toString() {
+		return "Vehicles{" +
+				"type='" + type + '\'' +
+				", brand='" + brand + '\'' +
+				", model='" + model + '\'' +
+				", displacement=" + displacement +
+				", color='" + color + '\'' +
+				", power=" + power +
+				", transmissionType='" + transmissionType + '\'' +
+				", yearOfRegistration=" + yearOfRegistration +
+				", fuelType='" + fuelType + '\'' +
+				", price=" + price +
+				", discountPrice=" + discountPrice +
+				", accessories='" + accessories + '\'' +
+				", condition=" + condition +
+				", available=" + available +
+				'}';
 	}
 }
