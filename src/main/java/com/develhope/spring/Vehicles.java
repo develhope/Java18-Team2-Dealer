@@ -1,13 +1,6 @@
 package com.develhope.spring;
 
 public class Vehicles {
-	public String getType() {
-		return type;
-	}
-
-	public void setType(String type) {
-		this.type = type;
-	}
 
 	private String type;
 	private String brand;
@@ -39,6 +32,13 @@ public class Vehicles {
 		this.accessories = accessories;
 		this.condition = condition;
 		this.available = available;
+	}
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	public String getBrand() {
