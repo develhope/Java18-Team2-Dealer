@@ -1,18 +1,39 @@
 package com.develhope.spring;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table
 public class SellerAtt {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@Column(nullable = false, name = "Nome")
 	private String name;
+	@Column(nullable = false, name = "Cognome")
 	private String surname;
+	@Column(nullable = false, name = "Tel.")
 	private Integer phoneNumber;
+	@Column(nullable = false, name = "E-Mail")
 	private String email;
+	@Column(nullable = false, name = "Password")
 	private String password;
 
-	public SellerAtt(String name, String surname, Integer phoneNumber, String email, String password) {
+	public SellerAtt(Long id, String name, String surname, Integer phoneNumber, String email, String password) {
+		this.id = id;
 		this.name = name;
 		this.surname = surname;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.password = password;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
