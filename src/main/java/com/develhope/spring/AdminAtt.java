@@ -3,14 +3,12 @@ package com.develhope.spring;
 public class AdminAtt {
 	private String name;
 	private String surname;
-	private Integer phoneNumber;
 	private String email;
 	private String password;
 
-	public AdminAtt(String name, String surname, Integer phoneNumber, String email, String password) {
+	public AdminAtt(String name, String surname, String email, String password) {
 		this.name = name;
 		this.surname = surname;
-		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.password = password;
 	}
@@ -29,14 +27,6 @@ public class AdminAtt {
 
 	public void setSurname(String surname) {
 		this.surname = surname;
-	}
-
-	public Integer getPhoneNumber() {
-		return phoneNumber;
-	}
-
-	public void setPhoneNumber(Integer phoneNumber) {
-		this.phoneNumber = phoneNumber;
 	}
 
 	public String getEmail() {
