@@ -1,16 +1,40 @@
 package com.develhope.spring;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table
 public class AdminAtt {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@Column(nullable = false, name = "Nome")
 	private String name;
+	@Column(nullable = false, name = "Cognome")
 	private String surname;
+	@Column(nullable = false, name = "Tel.")
+	private Integer phoneNumber;
+	@Column(nullable = false, name = "E-Mail")
 	private String email;
+	@Column(nullable = false, name = "Password")
 	private String password;
 
-	public AdminAtt(String name, String surname, String email, String password) {
+
+	public AdminAtt(Long id, String name, String surname, Integer phoneNumber, String email, String password) {
+		this.id = id;
 		this.name = name;
 		this.surname = surname;
+		this.phoneNumber = phoneNumber;
 		this.email = email;
 		this.password = password;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 	public String getName() {
@@ -27,6 +51,14 @@ public class AdminAtt {
 
 	public void setSurname(String surname) {
 		this.surname = surname;
+	}
+
+	public Integer getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(Integer phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 
 	public String getEmail() {

@@ -1,15 +1,39 @@
 package com.develhope.spring;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Customer {
-    private List<Vehicles> vehiclesList = new ArrayList<>();
+	//Creare un ordine a partire da un veicolo contrassegnato come ordinabile
+	//      ------ METODO------
 
-    public void addVehicles(Vehicles vehicles){
-        vehiclesList.add(vehicles);
+	//Vedere i propri ordini
+	//      ------ METODO------
 
-    }
+	//Cancellare un ordine
+	//      ------ METODO------
 
+	//Creare un acquisto a partire da un veicolo contrassegnato come acquistabile
+	//      ------ METODO------
 
+	//Vedere i propri acquisti
+	//      ------ METODO------
+
+	//Creare un noleggio
+	//      ------ METODO------
+
+	//Vedere i propri noleggi
+	//      ------ METODO------
+
+	//Cancellare un noleggio
+	//      ------ METODO------
+
+	//Cancellare la propria utenza
+	//      ------ METODO------
+
+	//Modificare i dati dell’utente
+	//      ------ METODO------
+
+	//Ricercare un veicolo secondo diversi criteri (prezzo, colore, marca, modello, ecc)
+	//      ------ METODO------
+
+	//Ottenere i dettagli di un veicolo specifico
+	//      ------ METODO------
 }
