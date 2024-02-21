@@ -1,80 +1,83 @@
 package com.develhope.spring;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table
 public class Admin {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@Column(nullable = false, name = "Nome")
+	private String name;
+	@Column(nullable = false, name = "Cognome")
+	private String surname;
+	@Column(nullable = false, name = "Tel.")
+	private Integer phoneNumber;
+	@Column(nullable = false, name = "E-Mail")
+	private String email;
+	@Column(nullable = false, name = "Password")
+	private String password;
 
-	//Aggiungere un veicolo
-	//      ------ METODO------
 
-	//Cancellare un veicolo
-	//      ------ METODO------
+	public Admin(Long id, String name, String surname, Integer phoneNumber, String email, String password) {
+		this.id = id;
+		this.name = name;
+		this.surname = surname;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+		this.password = password;
+	}
 
-	//Modificare un veicolo
-	//      ------ METODO------
+	public Admin() {
 
-	//Cambiare lo stato del veicolo
-	//      ------ METODO------
+	}
 
-	//Creare un ordine per un utente
-	//      ------ METODO------
+	public Long getId() {
+		return id;
+	}
 
-	//Cancellare un ordine per un utente
-	//      ------ METODO------
+	public void setId(Long id) {
+		this.id = id;
+	}
 
-	//Modificare un ordine per un utente
-	//      ------ METODO------
+	public String getName() {
+		return name;
+	}
 
-	//Creare un noleggio per un utente
-	//      ------ METODO------
+	public void setName(String name) {
+		this.name = name;
+	}
 
-	//Cancellare un noleggio per un utente
-	//      ------ METODO------
+	public String getSurname() {
+		return surname;
+	}
 
-	//Modificare un noleggio per un utente
-	//      ------ METODO------
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
 
-	//Creare acquisto per un utente
-	//      ------ METODO------
+	public Integer getPhoneNumber() {
+		return phoneNumber;
+	}
 
-	//Cancellare acquisto per un utente
-	//      ------ METODO------
+	public void setPhoneNumber(Integer phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
 
-	//Modificare acquisto per un utente
-	//      ------ METODO------
+	public String getEmail() {
+		return email;
+	}
 
-	//Verifica vendite
-	//      ------ METODO------
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-	//Verificare un venditore quante vendite ha fatto in un determinato periodo di tempo
-	//      ------ METODO------
+	public String getPassword() {
+		return password;
+	}
 
-	//Verificare un venditore quanti soldi ha generato in un determinato periodo di tempo
-	//      ------ METODO------
-
-	//Verificare il guadagno del salone in un determinato periodo
-	//      ------ METODO------
-
-	//Verificare i veicoli attualmente ordinabili/acquistabili/non disponibili/nuovi/usati
-	//      ------ METODO------
-
-	//Cancellare un utente
-	//      ------ METODO------
-
-	//Modificare un utente
-	//      ------ METODO------
-
-	//Cancellare un venditore
-	//      ------ METODO------
-
-	//Modificare un venditore
-	//      ------ METODO------
-
-	//Ottenere il veicolo più venduto in un dato periodo
-	//      ------ METODO------
-
-	//Ottenere il veicolo con valore più alto venduto fino a quel dato istante
-	//      ------ METODO------
-
-	//Ottenere il veicolo più ricercato/ordinato
-	//      ------ METODO------
-
+	public void setPassword(String password) {
+		this.password = password;
+	}
 }
