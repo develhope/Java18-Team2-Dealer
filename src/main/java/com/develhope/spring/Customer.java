@@ -8,15 +8,15 @@ public class Customer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column(nullable = false, name = "Nome")
+	@Column(nullable = false, name = "nome")
 	private String name;
-	@Column(nullable = false, name = "Cognome")
+	@Column(nullable = false, name = "cognome")
 	private String surname;
-	@Column(nullable = false, name = "Tel.")
+	@Column(nullable = false, name = "cellulare")
 	private Integer phoneNumber;
-	@Column(nullable = false, name = "E-Mail")
+	@Column(nullable = false, name = "email")
 	private String email;
-	@Column(nullable = false, name = "Password")
+	@Column(nullable = false, name = "password")
 	private String password;
 
 
