@@ -1,9 +1,19 @@
 package com.develhope.spring;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
+
+@Entity
+@Table
 public class Purchase {
+    @Column(nullable = false, name = "deposito")
     int deposit;
+    @Column(nullable = false, name = "pagato")
     boolean payed;
+    @Column(nullable = false, name = "stato_ordine")
     String status;
+    @Column(nullable = false, name = "ordinato/venduto")
     String orderOrSell;
 
     public Purchase(int deposit, boolean payed, String status, String orderOrSell) {

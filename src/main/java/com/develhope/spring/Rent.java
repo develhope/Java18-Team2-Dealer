@@ -1,13 +1,24 @@
 package com.develhope.spring;
 
-import java.util.Date;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
+import java.util.Date;
+@Entity
+@Table
 public class Rent {
+@Column(nullable = false, name = "inizio_noleggio")
 Date startRent;
+@Column(nullable = false, name = "fine_noleggio")
 Date endRent;
+@Column(nullable = false, name = "noleggio_giornaliero")
 double dailyRent;
+@Column(nullable = false, name = "giorni_totale_noleggio")
 double totalRent;
+@Column(nullable = false, name = "pagato")
 boolean payed;
+@Column(nullable = false, name = "veicolo_noleggiato")
 String rentedVehicle;
 
 	public Rent(Date startRent, Date endRent, double dailyRent, double totalRent, boolean payed, String rentedVehicle) {
