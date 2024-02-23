@@ -28,18 +28,18 @@ public class Vehicles {
 	@Column(nullable = false, name = "carburante")
 	private String fuelType;
 	@Column(nullable = false, name = "prezzo")
-	private int price;
+	private double price;
 	@Column(nullable = false, name = "prezzo scontato")
-	private int discountPrice;
+	private double discountPrice;
 	@Column(nullable = false, name = "accessori")
 	private String accessories;
 	@Column(nullable = false, name = "condizioni")
-	private boolean condition;
+	private String condition;
 	@Column(nullable = false, name = "disponibilità")
 	private boolean available;
 
 	public Vehicles(Long id, String type, String brand, String model, Integer displacement, String color, String power, String transmissionType,
-	                Integer yearOfRegistration, String fuelType, int price, int discountPrice, String accessories, boolean condition, boolean available) {
+	                Integer yearOfRegistration, String fuelType, double price, double discountPrice, String accessories, String condition, boolean available) {
 		this.id = id;
 		this.type = type;
 		this.brand = brand;
@@ -137,7 +137,7 @@ public class Vehicles {
 		this.fuelType = fuelType;
 	}
 
-	public int getPrice() {
+	public double getPrice() {
 		return price;
 	}
 
@@ -145,7 +145,7 @@ public class Vehicles {
 		this.price = price;
 	}
 
-	public int getDiscountPrice() {
+	public double getDiscountPrice() {
 		return discountPrice;
 	}
 
@@ -161,12 +161,13 @@ public class Vehicles {
 		this.accessories = accessories;
 	}
 
-	public boolean isCondition() {
+	public String isCondition() {
 		return condition;
 	}
 
-	public void setCondition(boolean condition) {
+	public String setCondition(String condition) {
 		this.condition = condition;
+		return condition;
 	}
 
 	public boolean isAvailable() {
