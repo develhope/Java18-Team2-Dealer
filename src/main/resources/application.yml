@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:mysql://127.0.0.1:3306/
+    url: jdbc:mysql://127.0.0.1:3306/cars
     username: root
-    password:
+    password: arkanolus1994
   jpa:
     database: mysql
     show_sql: true

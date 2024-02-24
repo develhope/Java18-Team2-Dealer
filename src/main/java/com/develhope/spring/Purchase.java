@@ -3,9 +3,15 @@ package com.develhope.spring;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Table
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Purchase {
     @Column(nullable = false, name = "deposito")
     int deposit;
@@ -15,43 +21,4 @@ public class Purchase {
     String status;
     @Column(nullable = false, name = "ordinato/venduto")
     String orderOrSell;
-
-    public Purchase(int deposit, boolean payed, String status, String orderOrSell) {
-        this.deposit = deposit;
-        this.payed = payed;
-        this.status = status;
-        this.orderOrSell = orderOrSell;
-    }
-
-    public int getDeposit() {
-        return deposit;
-    }
-
-    public void setDeposit(int deposit) {
-        this.deposit = deposit;
-    }
-
-    public boolean isPayed() {
-        return payed;
-    }
-
-    public void setPayed(boolean payed) {
-        this.payed = payed;
-    }
-
-    public String getStatus() {
-        return status;
-    }
-
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
-    public String getOrderOrSell() {
-        return orderOrSell;
-    }
-
-    public void setOrderOrSell(String orderOrSell) {
-        this.orderOrSell = orderOrSell;
-    }
 }
