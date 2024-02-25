@@ -44,4 +44,8 @@ public class Vehicles {
 	private String condition;
 	@Column(nullable = false, name = "disponibilità")
 	private boolean available;
+
+
+	public Vehicles(Long id, String type, String brand, String model, Integer displacement, String color, String power, String transmissionType, Integer yearOfRegistration, String fuelType, int price, int discountPrice, String accessories, String condition, boolean available) {
+	}
 }
