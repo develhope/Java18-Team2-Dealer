@@ -1,7 +1,10 @@
 package com.develhope.spring;
 
+import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Service
 public class CustomerService {
@@ -15,10 +18,16 @@ public class CustomerService {
     private OrderRepository orderRepository;
 
     //Creare un ordine a partire da un veicolo contrassegnato come ordinabile (Customer)
-    //      ------ METODO------
+    public Vehicles createOrderIfIsAvailable(@PathVariable Long id, Vehicles vehicles){
+        if (vehiclesRepository.existsById(id)){
+            if(vehicles.isAvailable()){
+                return vehicles;
+            }
+        }return null;
+    }
 
     //Vedere i propri ordini (Customer)
-    //      ------ METODO------
+    public Customer viewOrders(@PathVariable Long id, )
 
     //Cancellare un ordine (Customer)
     //      ------ METODO------

@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long idOrder;
     @Column(nullable = false, name = "deposito")
     private int deposit;
     @Column(nullable = false, name = "pagato")

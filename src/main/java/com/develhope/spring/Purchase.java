@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;
+    private Long idPurchase;
     @Column(nullable = false, name = "deposito")
     private int deposit;
     @Column(nullable = false, name = "pagato")
