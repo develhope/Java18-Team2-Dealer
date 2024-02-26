@@ -15,15 +15,15 @@ import java.util.Date;
 @NoArgsConstructor
 public class Rent {
 @Column(nullable = false, name = "inizio_noleggio")
-Date startRent;
+private Date startRent;
 @Column(nullable = false, name = "fine_noleggio")
-Date endRent;
+private Date endRent;
 @Column(nullable = false, name = "noleggio_giornaliero")
-double dailyRent;
+private double dailyRent;
 @Column(nullable = false, name = "giorni_totale_noleggio")
-double totalRent;
+private double totalRent;
 @Column(nullable = false, name = "pagato")
-boolean payed;
+private boolean payed;
 @Column(nullable = false, name = "veicolo_noleggiato")
 String rentedVehicle;
 }
