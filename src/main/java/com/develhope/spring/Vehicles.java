@@ -43,4 +43,10 @@ public class Vehicles {
 	private String condition;
 	@Column(nullable = false, name = "disponibilità")
 	private boolean available;
+	@Column(nullable = false, name = "acquistabile")
+	private boolean purchasable;
+	@Column(nullable = false, name = "noleggiabile")
+	private boolean rentable;
+	@Column(nullable = false, name = "ordinabile")
+	private boolean orderable;
 }
