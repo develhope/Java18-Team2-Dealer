@@ -27,7 +27,6 @@ public class CustomerService {
     }
 
     //Vedere i propri ordini (Customer)
-    public Customer viewOrders(@PathVariable Long id, )
 
     //Cancellare un ordine (Customer)
     //      ------ METODO------

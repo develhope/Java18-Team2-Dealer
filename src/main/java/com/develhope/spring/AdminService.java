@@ -155,20 +155,20 @@ public class AdminService {
     }
 
     //Verifica vendite (Admin)
-    //      ------ METODO------
 
+    //      ------ METODO------
     //Verificare un venditore quante vendite ha fatto in un determinato periodo di tempo (Admin)
-    //      ------ METODO------
 
+    //      ------ METODO------
     //Verificare un venditore quanti soldi ha generato in un determinato periodo di tempo (Admin)
-    //      ------ METODO------
 
+    //      ------ METODO------
     //Verificare il guadagno del salone in un determinato periodo (Admin)
-    //      ------ METODO------
 
+    //      ------ METODO------
     //Verificare i veicoli attualmente ordinabili/acquistabili/non disponibili/nuovi/usati (Admin)
-    //      ------ METODO------
 
+    //      ------ METODO------
     //Cancellare un utente (Admin)
     public void deleteACustomers(@PathVariable Long id){
         customerRepository.deleteById(id);
