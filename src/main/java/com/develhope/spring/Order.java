@@ -23,4 +23,3 @@ public class Order {
     @Column(nullable = false, name = "ordinato/venduto")
     private boolean isOrdered;
 }
-

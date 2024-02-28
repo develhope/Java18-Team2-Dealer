@@ -56,16 +56,16 @@ public class AdminService {
             vehicles.setDiscountPrice(vehicles.getDiscountPrice());
             vehicles.setAccessories(vehicles.getAccessories());
             vehicles.setCondition(vehicles.getCondition());
-            vehicles.setAvailable(vehicles.isAvailable());
+            vehicles.setStatus(vehicles.getStatus());
             return vehiclesRepository.save(vehicles);
         }else return new Vehicles();
     }
 
     //Cambiare lo stato del veicolo (Admin)
-    public void setIsAvailable(Long id, boolean isAvailable){
+    public void setIsAvailable(Long id, Status status){
         Optional<Vehicles> vehicle= vehiclesRepository.findById(id);
         if (!vehicle.isPresent()) return;
-        vehicle.get().setAvailable(isAvailable);
+        vehicle.get().setStatus(status);
         vehiclesRepository.save(vehicle.get());
     }
 
@@ -207,12 +207,15 @@ public class AdminService {
 
     //Ottenere il veicolo più venduto in un dato periodo (Admin)
     //      ------ METODO------
+//    public Vehicles vehicleMostSold(@PathVariable Long id, @RequestBody Vehicles vehicles){
+//        Vehicles vehicleMostSold = null;
+//        if
+//    }
+
 
     //Ottenere il veicolo con valore più alto venduto fino a quel dato istante (Admin)
     //      ------ METODO------
 
     //Ottenere il veicolo più ricercato/ordinato (Admin)
     //      ------ METODO------
-
-
 }
