@@ -1,4 +1,4 @@
-package com.develhope.spring;
+package com.develhope.spring.Purchase;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -10,10 +10,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Order {
+public class Purchase {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long idOrder;
+    private Long idPurchase;
     @Column(nullable = false, name = "deposito")
     private int deposit;
     @Column(nullable = false, name = "pagato")
@@ -21,5 +21,5 @@ public class Order {
     @Column(nullable = false, name = "stato_ordine")
     private String status;
     @Column(nullable = false, name = "ordinato/venduto")
-    private boolean isOrdered;
+    private boolean isSelled;
 }

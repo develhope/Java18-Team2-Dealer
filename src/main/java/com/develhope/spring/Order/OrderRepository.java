@@ -1,5 +1,6 @@
-package com.develhope.spring;
+package com.develhope.spring.Order;
 
+import com.develhope.spring.Order.Order;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

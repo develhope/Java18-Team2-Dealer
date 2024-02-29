@@ -1,5 +1,6 @@
-package com.develhope.spring;
+package com.develhope.spring.User;
 
+import com.develhope.spring.User.Customer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

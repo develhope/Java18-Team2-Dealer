@@ -1,10 +1,9 @@
-package com.develhope.spring;
+package com.develhope.spring.Vehicles.EntityofVehicles;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 
 @Entity
