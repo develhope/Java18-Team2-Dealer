@@ -1,10 +1,14 @@
-package com.develhope.spring;
+package com.develhope.spring.User;
 
-import jakarta.persistence.Id;
+import com.develhope.spring.Order.OrderRepository;
+import com.develhope.spring.Purchase.PurchaseRepository;
+import com.develhope.spring.Rent.RentRepository;
+import com.develhope.spring.Vehicles.EntityofVehicles.Status;
+import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
+import com.develhope.spring.Vehicles.VehiclesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
 
 @Service
 public class CustomerService {
@@ -20,7 +24,7 @@ public class CustomerService {
     //Creare un ordine a partire da un veicolo contrassegnato come ordinabile (Customer)
     public Vehicles createOrderIfIsAvailable(@PathVariable Long id, Vehicles vehicles){
         if (vehiclesRepository.existsById(id)){
-            if(vehicles.isAvailable()){
+            if(vehicles.getStatus() == Status.Disponibile){
                 return vehicles;
             }
         }return null;

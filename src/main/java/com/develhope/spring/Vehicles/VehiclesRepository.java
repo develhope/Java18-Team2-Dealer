@@ -1,5 +1,6 @@
-package com.develhope.spring;
+package com.develhope.spring.Vehicles;
 
+import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
