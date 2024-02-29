@@ -4,7 +4,10 @@ import jakarta.persistence.Id;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.List;
 
 @Service
 public class CustomerService {
@@ -18,7 +21,7 @@ public class CustomerService {
     private OrderRepository orderRepository;
 
     //Creare un ordine a partire da un veicolo contrassegnato come ordinabile (Customer)
-    public Vehicles createOrderIfIsAvailable(@PathVariable Long id, Vehicles vehicles){
+    public Vehicles createOrderIfIsInStock(@PathVariable Long id, Vehicles vehicles){
         if (vehiclesRepository.existsById(id)){
             if(vehicles.isAvailable()){
                 return vehicles;
@@ -27,12 +30,25 @@ public class CustomerService {
     }
 
     //Vedere i propri ordini (Customer)
+    public List<Order> getAllOrders(@PathVariable Long idOrder){
+    if(orderRepository.existsById(idOrder)){
+             return orderRepository.findAll();
+        }return null;
+    }
 
     //Cancellare un ordine (Customer)
-    //      ------ METODO------
+    public List<Order> deleteOrderCustomer(@PathVariable Long idOrder){
+        if(orderRepository.existsById(idOrder)){
+            orderRepository.deleteById(idOrder);
+        }return null;
+    }
 
     //Creare un acquisto a partire da un veicolo contrassegnato come acquistabile (Customer)
-    //      ------ METODO------
+    public Vehicles createOrderIfIsAvailable(@PathVariable Long id,@RequestParam Vehicles vehicles){
+        if(vehiclesRepository.existsById(id) && vehicles.isAvailable()){
+
+        }
+    }
 
     //Vedere i propri acquisti (Customer)
     //      ------ METODO------

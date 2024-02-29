@@ -1,9 +1,7 @@
 package com.develhope.spring;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 @Entity
@@ -42,11 +40,19 @@ public class Vehicles {
 	@Column(nullable = false, name = "condizioni")
 	private String condition;
 	@Column(nullable = false, name = "disponibilità")
+	@Getter
+	@Setter
 	private boolean available;
 	@Column(nullable = false, name = "acquistabile")
+	@Getter
+	@Setter
 	private boolean purchasable;
 	@Column(nullable = false, name = "noleggiabile")
+	@Getter
+	@Setter
 	private boolean rentable;
 	@Column(nullable = false, name = "ordinabile")
+	@Getter
+	@Setter
 	private boolean orderable;
 }
