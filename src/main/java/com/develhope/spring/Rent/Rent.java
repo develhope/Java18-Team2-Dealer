@@ -1,4 +1,4 @@
-package com.develhope.spring;
+package com.develhope.spring.Rent;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,5 +1,14 @@
-package com.develhope.spring;
+package com.develhope.spring.User;
 
+import com.develhope.spring.Order.Order;
+import com.develhope.spring.Order.OrderRepository;
+import com.develhope.spring.Purchase.Purchase;
+import com.develhope.spring.Purchase.PurchaseRepository;
+import com.develhope.spring.Rent.Rent;
+import com.develhope.spring.Rent.RentRepository;
+import com.develhope.spring.Vehicles.EntityofVehicles.Status;
+import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
+import com.develhope.spring.Vehicles.VehiclesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -56,16 +65,16 @@ public class AdminService {
             vehicles.setDiscountPrice(vehicles.getDiscountPrice());
             vehicles.setAccessories(vehicles.getAccessories());
             vehicles.setCondition(vehicles.getCondition());
-            vehicles.setAvailable(vehicles.isAvailable());
+            vehicles.setStatus(vehicles.getStatus());
             return vehiclesRepository.save(vehicles);
         }else return new Vehicles();
     }
 
     //Cambiare lo stato del veicolo (Admin)
-    public void setIsAvailable(Long id, boolean isAvailable){
+    public void setIsAvailable(Long id, Status status){
         Optional<Vehicles> vehicle= vehiclesRepository.findById(id);
         if (!vehicle.isPresent()) return;
-        vehicle.get().setAvailable(isAvailable);
+        vehicle.get().setStatus(status);
         vehiclesRepository.save(vehicle.get());
     }
 
@@ -207,12 +216,15 @@ public class AdminService {
 
     //Ottenere il veicolo più venduto in un dato periodo (Admin)
     //      ------ METODO------
+//    public Vehicles vehicleMostSold(@PathVariable Long id, @RequestBody Vehicles vehicles){
+//        Vehicles vehicleMostSold = null;
+//        if
+//    }
+
 
     //Ottenere il veicolo con valore più alto venduto fino a quel dato istante (Admin)
     //      ------ METODO------
 
     //Ottenere il veicolo più ricercato/ordinato (Admin)
     //      ------ METODO------
-
-
 }

@@ -1,4 +1,4 @@
-package com.develhope.spring;
+package com.develhope.spring.Order;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,4 +23,3 @@ public class Order {
     @Column(nullable = false, name = "ordinato/venduto")
     private boolean isOrdered;
 }
-

@@ -1,7 +1,9 @@
-package com.develhope.spring;
+package com.develhope.spring.Vehicles.EntityofVehicles;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 
 @Entity
@@ -39,20 +41,17 @@ public class Vehicles {
 	private String accessories;
 	@Column(nullable = false, name = "condizioni")
 	private String condition;
-	@Column(nullable = false, name = "disponibilità")
-	@Getter
-	@Setter
-	private boolean available;
-	@Column(nullable = false, name = "acquistabile")
-	@Getter
-	@Setter
-	private boolean purchasable;
-	@Column(nullable = false, name = "noleggiabile")
-	@Getter
-	@Setter
-	private boolean rentable;
-	@Column(nullable = false, name = "ordinabile")
-	@Getter
-	@Setter
-	private boolean orderable;
+	@Enumerated(EnumType.STRING)
+	@Column(nullable = false, name = "Status")
+	private Status status;
+	private void choiceStatus (Integer choice){
+		 switch (choice) {
+			case 1 -> this.status = Status.Disponibile;
+			case 2 -> this.status = Status.NonDisponibile;
+			case 3 -> this.status = Status.Acquistabile;
+			case 4 -> this.status = Status.Noleggiabile;
+			case 5 -> this.status = Status.Ordinabile;
+			default -> throw new IllegalStateException("Unexpected value: " + choice);
+		};
+	}
 }
