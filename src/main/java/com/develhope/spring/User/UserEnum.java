@@ -1,4 +1,4 @@
-package com.develhope.spring.User.corrette;
+package com.develhope.spring.User;
 
 public enum UserEnum {
     ADMIN,
