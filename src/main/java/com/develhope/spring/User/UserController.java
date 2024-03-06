@@ -1,4 +1,4 @@
-package com.develhope.spring.User.corrette;
+package com.develhope.spring.User;
 
 import org.springframework.stereotype.Controller;
 
