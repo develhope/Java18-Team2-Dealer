@@ -64,8 +64,15 @@ public class VehiclesService {
     //Ricercare un veicolo secondo diversi criteri (prezzo, colore, marca, modello, ecc) (Customer)
     //      ------ METODO------
 
+
     //Ottenere i dettagli di un veicolo specifico (Customer)
     //      ------ METODO------
+    public Optional<Vehicles> searchVehicleById(Long id){
+        if(vehiclesRepository.existsById(id)){
+            return vehiclesRepository.findById(id);
+        }
+        return Optional.empty();
+    }
 
     //Ottenere il veicolo più venduto in un dato periodo (Admin)
     //      ------ METODO------
