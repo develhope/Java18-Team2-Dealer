@@ -13,7 +13,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Rent {
+public class Rents {
 @Column(nullable = false, name = "inizio_noleggio")
 private Date startRent;
 @Column(nullable = false, name = "fine_noleggio")
