@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class VehiclesService {
@@ -61,7 +62,24 @@ public class VehiclesService {
     }
 
     //Ricercare un veicolo secondo diversi criteri (prezzo, colore, marca, modello, ecc) (Customer)
-    //      ------ METODO------
+    public List<Vehicles> searchForParam(String brand, String model, Integer displacement, String color, String power, String transmissionType,
+                                         Integer yearOfRegistration, String fuelType, Double price, Double discountPrice, String accessories, String condition){
+        List<Vehicles> vehicles = vehiclesRepository.findAll();
+        return vehicles.stream()
+                .filter(v -> brand == null || v.getBrand().equals(brand))
+                .filter(v -> model == null || v.getModel().equals(model))
+                .filter(v -> displacement == null || v.getDisplacement().equals(displacement))
+                .filter(v -> color == null || v.getColor().equals(color))
+                .filter(v -> power == null || v.getPower().equals(power))
+                .filter(v -> transmissionType == null || v.getTransmissionType().equals(transmissionType))
+                .filter(v -> yearOfRegistration == null || v.getYearOfRegistration().equals(yearOfRegistration))
+                .filter(v -> fuelType == null || v.getFuelType().equals(fuelType))
+                .filter(v -> price <= 0 || v.getPrice() <= price)
+                .filter(v -> discountPrice <= 0 || v.getDiscountPrice() <= discountPrice)
+                .filter(v -> accessories == null || v.getAccessories().equals(accessories))
+                .filter(v -> condition == null || v.getCondition().equals(condition))
+                .collect(Collectors.toList());
+    }
 
     //Ottenere i dettagli di un veicolo specifico (Customer)
     //      ------ METODO------
@@ -81,5 +99,8 @@ public class VehiclesService {
     //      ------ METODO------
 
     //Dettagli veicolo (Seller)
-    //      ------ METODO------
+    public Vehicles detailsVehicles(Long id){
+        Vehicles vehicle = vehiclesRepository.findById(id).orElse(null);
+        return vehicle;
+    }
 }
