@@ -3,9 +3,12 @@ package com.develhope.spring.Order;
 import com.develhope.spring.Vehicles.EntityofVehicles.Status;
 import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
 import com.develhope.spring.Vehicles.VehiclesRepository;
+import org.springframework.scheduling.support.SimpleTriggerContext;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+
+import java.util.List;
 
 @Service
 public class OrderService {
@@ -45,15 +48,27 @@ public class OrderService {
 
 
     //Vedere i propri ordini (Customer)
-    //      ------ METODO------
+    public List<Orders> viewOrders(){
+        return orderRepository.findAll();
+    }
 
     //Verifica stato ordine (Seller)
-    //      ------ METODO------
+    public String getOrderStatus(Orders orders){
+        return orders.getStatus();
+    }
+
 
     //Aggiorna stato ordine (Seller)
-    //      ------ METODO------
+   public void updateStatus(Orders orders, String status){
+        orders.setStatus(status);
+   }
 
     //Verifica ordini se disponibile o no (Seller)
-    //      ------ METODO------
+   public boolean isAvailable(boolean isOrdered, Orders orders){
+        if(orders.isOrdered()==isOrdered){
+            return orders.isOrdered();
+        }
+       return false;
+   }
 
 }
