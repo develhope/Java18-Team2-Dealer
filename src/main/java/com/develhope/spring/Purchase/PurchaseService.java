@@ -1,6 +1,9 @@
 package com.develhope.spring.Purchase;
 
+import com.develhope.spring.Order.OrderRepository;
+import com.develhope.spring.Order.Orders;
 import com.develhope.spring.Rent.RentRepository;
+import com.develhope.spring.User.User;
 import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
 import com.develhope.spring.Vehicles.VehiclesRepository;
 import org.springframework.stereotype.Service;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 public class PurchaseService {
     private VehiclesRepository vehiclesRepository;
     private PurchaseRepository purchaseRepository;
+    private OrderRepository orderRepository;
     //Creare acquisto per un utente (Admin)
     public Vehicles createPurchaseForCustomers(@PathVariable Long id, @RequestBody Purchase purchase){
         if (vehiclesRepository.existsById(id)){
@@ -40,6 +44,7 @@ public class PurchaseService {
     //      ------ METODO------
 
     //Vedere i propri acquisti (Customer)
+
 
     //      ------ METODO------
     //Verifica vendite (Admin)
