@@ -1,8 +1,6 @@
 package com.develhope.spring.Rent;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +11,10 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Rent {
+public class Rents {
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 @Column(nullable = false, name = "inizio_noleggio")
 private Date startRent;
 @Column(nullable = false, name = "fine_noleggio")

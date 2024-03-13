@@ -20,25 +20,25 @@ public class OrderService {
         }return null;
     }
     //Creare un ordine per un utente (Admin)
-    public Vehicles createOrderForCustomers(@PathVariable Long id, @RequestBody Order order){
+    public Vehicles createOrderForCustomers(@PathVariable Long id, @RequestBody Orders orders){
         if (vehiclesRepository.existsById(id)){
-            orderRepository.save(order);
+            orderRepository.save(orders);
         }
         return null;
     }
 
     //Cancellare un ordine per un utente (Admin, Seller, Customer)
-    public Order deleteOrderForCustomers(@PathVariable Long id, @RequestBody Order order){
+    public Orders deleteOrderForCustomers(@PathVariable Long id, @RequestBody Orders orders){
         if (orderRepository.existsById(id)){
-            orderRepository.delete(order);
+            orderRepository.delete(orders);
         }
         return null;
     }
 
     //Modificare un ordine per un utente (Admin, Seller)
-    public Order updateOrderForCustomers(@PathVariable Long id, @RequestBody Order order){
+    public Orders updateOrderForCustomers(@PathVariable Long id, @RequestBody Orders orders){
         if (orderRepository.existsById(id)){
-            orderRepository.save(order);
+            orderRepository.save(orders);
         }
         return null;
     }

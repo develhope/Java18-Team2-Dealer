@@ -44,7 +44,7 @@ public class Vehicles {
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, name = "Status")
 	private Status status;
-	private void choiceStatus (Integer choice){
+	/*private void choiceStatus (Integer choice){
 		 switch (choice) {
 			case 1 -> this.status = Status.Disponibile;
 			case 2 -> this.status = Status.NonDisponibile;
@@ -52,6 +52,6 @@ public class Vehicles {
 			case 4 -> this.status = Status.Noleggiabile;
 			case 5 -> this.status = Status.Ordinabile;
 			default -> throw new IllegalStateException("Unexpected value: " + choice);
-		};
-	}
+		}
+	}*/
 }

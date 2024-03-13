@@ -11,37 +11,37 @@ public class RentService {
     private VehiclesRepository vehiclesRepository;
     private RentRepository rentRepository;
     //Creare un noleggio per un utente (Admin, Seller)
-    public Vehicles createRentForCustomers(@PathVariable Long id, @RequestBody Rent rent){
+    public Vehicles createRentForCustomers(@PathVariable Long id, @RequestBody Rents rents){
         if (vehiclesRepository.existsById(id)){
-            rent.setStartRent(rent.getStartRent());
-            rent.setEndRent(rent.getEndRent());
-            rent.setDailyRent(rent.getDailyRent());
-            rent.setTotalRent(rent.getTotalRent());
-            rent.setPayed(rent.isPayed());
-            rent.setRentedVehicle(rent.getRentedVehicle());
-            rentRepository.save(rent);
+            rents.setStartRent(rents.getStartRent());
+            rents.setEndRent(rents.getEndRent());
+            rents.setDailyRent(rents.getDailyRent());
+            rents.setTotalRent(rents.getTotalRent());
+            rents.setPayed(rents.isPayed());
+            rents.setRentedVehicle(rents.getRentedVehicle());
+            rentRepository.save(rents);
         }
         return null;
     }
 
     //Cancellare un noleggio per un utente (Admin, Seller)
-    public Vehicles deleteRentForCustomers(@PathVariable Long id, @RequestBody Rent rent){
+    public Vehicles deleteRentForCustomers(@PathVariable Long id, @RequestBody Rents rents){
         if (rentRepository.existsById(id)){
-            rentRepository.delete(rent);
+            rentRepository.delete(rents);
         }
         return null;
     }
 
     //Modificare un noleggio per un utente (Admin, Seller)
-    public Vehicles updateRentForCustomers(@PathVariable Long id, @RequestBody Rent rent){
+    public Vehicles updateRentForCustomers(@PathVariable Long id, @RequestBody Rents rents){
         if (rentRepository.existsById(id)){
-            rent.setStartRent(rent.getStartRent());
-            rent.setEndRent(rent.getEndRent());
-            rent.setDailyRent(rent.getDailyRent());
-            rent.setTotalRent(rent.getTotalRent());
-            rent.setPayed(rent.isPayed());
-            rent.setRentedVehicle(rent.getRentedVehicle());
-            rentRepository.save(rent);
+            rents.setStartRent(rents.getStartRent());
+            rents.setEndRent(rents.getEndRent());
+            rents.setDailyRent(rents.getDailyRent());
+            rents.setTotalRent(rents.getTotalRent());
+            rents.setPayed(rents.isPayed());
+            rents.setRentedVehicle(rents.getRentedVehicle());
+            rentRepository.save(rents);
         }
         return null;
     }
