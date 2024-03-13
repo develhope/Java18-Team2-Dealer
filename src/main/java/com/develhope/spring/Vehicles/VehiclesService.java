@@ -66,7 +66,12 @@ public class VehiclesService {
 
     //Ottenere i dettagli di un veicolo specifico (Customer)
     //      ------ METODO------
-
+    public Optional<Vehicles> searchVehicleById(Long id){
+        if(vehiclesRepository.existsById(id)){
+            return vehiclesRepository.findById(id);
+        }
+        return Optional.empty();
+    }
     //Ottenere il veicolo più venduto in un dato periodo (Admin)
     //      ------ METODO------
 //    public Vehicles vehicleMostSold(@PathVariable Long id, @RequestBody Vehicles vehicles){
