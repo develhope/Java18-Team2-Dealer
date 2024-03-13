@@ -35,7 +35,6 @@ public class VehiclesService {
     public Vehicles updateVehicles(@PathVariable Long id,@RequestBody Vehicles vehicles){
         Optional<Vehicles> optionalVehicle = vehiclesRepository.findById(id);
         if (optionalVehicle.isPresent()){
-            vehicles.setType(vehicles.getType());
             vehicles.setBrand(vehicles.getBrand());
             vehicles.setModel(vehicles.getModel());
             vehicles.setDisplacement(vehicles.getDisplacement());
