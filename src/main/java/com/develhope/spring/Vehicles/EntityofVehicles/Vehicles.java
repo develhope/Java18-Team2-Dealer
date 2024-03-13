@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+
 
 @Entity
 @Table
@@ -13,10 +15,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Vehicles {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
-	@Column(nullable = false, name = "tipo di veicolo")
-	private String type;
 	@Column(nullable = false, name = "marchio")
 	private String brand;
 	@Column(nullable = false, name = "modello")
@@ -42,16 +42,6 @@ public class Vehicles {
 	@Column(nullable = false, name = "condizioni")
 	private String condition;
 	@Enumerated(EnumType.STRING)
-	@Column(nullable = false, name = "Status")
+	@Column(nullable = false, name = "status")
 	private Status status;
-	/*private void choiceStatus (Integer choice){
-		 switch (choice) {
-			case 1 -> this.status = Status.Disponibile;
-			case 2 -> this.status = Status.NonDisponibile;
-			case 3 -> this.status = Status.Acquistabile;
-			case 4 -> this.status = Status.Noleggiabile;
-			case 5 -> this.status = Status.Ordinabile;
-			default -> throw new IllegalStateException("Unexpected value: " + choice);
-		}
-	}*/
 }
