@@ -14,7 +14,7 @@ public class OrderService {
     //Creare un ordine a partire da un veicolo contrassegnato come ordinabile (Seller, Customer)
     public Vehicles createOrderIfIsAvailable(@PathVariable Long id, Vehicles vehicles){
         if (vehiclesRepository.existsById(id)){
-            if(vehicles.getStatus() == Status.Disponibile){
+            if(vehicles.getStatus() == Status.DISPONIBILE){
                 return vehicles;
             }
         }return null;
