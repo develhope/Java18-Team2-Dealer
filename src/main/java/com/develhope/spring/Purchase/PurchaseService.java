@@ -1,9 +1,6 @@
 package com.develhope.spring.Purchase;
 
 import com.develhope.spring.Order.OrderRepository;
-import com.develhope.spring.Order.Orders;
-import com.develhope.spring.Rent.RentRepository;
-import com.develhope.spring.User.User;
 import com.develhope.spring.Vehicles.EntityofVehicles.Status;
 import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
 import com.develhope.spring.Vehicles.VehiclesRepository;
@@ -19,7 +16,7 @@ public class PurchaseService {
     private PurchaseRepository purchaseRepository;
     private OrderRepository orderRepository;
     //Creare acquisto per un utente (Admin)
-    public Vehicles createPurchaseForCustomers(@PathVariable Long id, @RequestBody Purchase purchase){
+    public Vehicles createPurchaseForCustomers(Long id, Purchase purchase){
         if (vehiclesRepository.existsById(id)){
             purchaseRepository.save(purchase);
         }
@@ -27,12 +24,13 @@ public class PurchaseService {
     }
 
     //Cancellare acquisto per un utente (Admin)
-    public void deletePurchaseForCustomers(@PathVariable Long id){
+    public Purchase deletePurchaseForCustomers(Long id){
         purchaseRepository.deleteById(id);
+        return null;
     }
 
     //Modificare acquisto per un utente (Admin)
-    public Vehicles updatePurchaseForCustomers(@PathVariable Long id, @RequestBody Purchase purchase){
+    public Vehicles updatePurchaseForCustomers(Long id, Purchase purchase){
         if (purchaseRepository.existsById(id)){
             purchase.setDeposit(purchase.getDeposit());
             purchase.setPayed(purchase.isPayed());
