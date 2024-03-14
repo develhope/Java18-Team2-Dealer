@@ -18,13 +18,13 @@ public class VehiclesService {
     }
 
     //Aggiungere un veicolo (Admin)
-    public Vehicles createVehicles(@RequestBody Vehicles vehicles){
+    public Vehicles createVehicles(Vehicles vehicles){
         Vehicles createdVehicles = vehiclesRepository.save(vehicles);
         return createdVehicles;
     }
 
     //Cancellare un veicolo (Admin)
-    public Vehicles deleteAVeicles(@PathVariable Long id){
+    public Vehicles deleteAVeicles(Long id){
         if (vehiclesRepository.existsById(id)) {
             vehiclesRepository.deleteById(id);
         }
@@ -32,7 +32,7 @@ public class VehiclesService {
     }
 
     //Modificare un veicolo (Admin)
-    public Vehicles updateVehicles(@PathVariable Long id,@RequestBody Vehicles vehicles){
+    public Vehicles updateVehicles(Long id, Vehicles vehicles){
         Optional<Vehicles> optionalVehicle = vehiclesRepository.findById(id);
         if (optionalVehicle.isPresent()){
             vehicles.setType(vehicles.getType());
