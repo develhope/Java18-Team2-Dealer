@@ -4,6 +4,7 @@ import com.develhope.spring.Order.OrderRepository;
 import com.develhope.spring.Vehicles.EntityofVehicles.Status;
 import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
 import com.develhope.spring.Vehicles.VehiclesRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,15 @@ import java.util.List;
 public class PurchaseService {
     private VehiclesRepository vehiclesRepository;
     private PurchaseRepository purchaseRepository;
+    @Autowired
+    public PurchaseService(VehiclesRepository vehiclesRepository) {
+        this.vehiclesRepository = vehiclesRepository;
+    }
+
+    @Autowired
+    public PurchaseService(PurchaseRepository purchaseRepository){
+        this.purchaseRepository = purchaseRepository;
+    }
     private OrderRepository orderRepository;
     //Creare acquisto per un utente (Admin)
     public Vehicles createPurchaseForCustomers(Long id, Purchase purchase){

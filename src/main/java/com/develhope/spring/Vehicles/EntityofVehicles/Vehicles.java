@@ -1,9 +1,13 @@
 package com.develhope.spring.Vehicles.EntityofVehicles;
 
+import com.develhope.spring.Purchase.Purchase;
+import com.develhope.spring.User.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 //Entities to add
 // Rent, Purchase, Order, User
@@ -47,4 +51,8 @@ public class Vehicles {
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, name = "status")
 	private Status status;
+	@ManyToOne
+	private User users;
+	@ManyToMany
+	private List <Purchase> purchaseList;
 }

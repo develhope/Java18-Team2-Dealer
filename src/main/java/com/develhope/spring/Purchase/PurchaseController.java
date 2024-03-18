@@ -16,7 +16,7 @@ public class PurchaseController {
     @Autowired
     private PurchaseService purchaseService;
 
-    @PostMapping("/create")
+    @PostMapping("/create/{id}")
     public Vehicles createPurchaseForCustomers(@PathVariable Long id, @RequestBody Purchase purchase){
         return purchaseService.createPurchaseForCustomers(id, purchase);
     }
