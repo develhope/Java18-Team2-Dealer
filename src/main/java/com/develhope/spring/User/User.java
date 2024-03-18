@@ -15,6 +15,8 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@Column(nullable = false, name = "ruolo")
+	private UserEnum role;
 	@Column(nullable = false, name = "nome")
 	private String name;
 	@Column(nullable = false, name = "cognome")
@@ -25,4 +27,6 @@ public class User {
 	private String email;
 	@Column(nullable = false, name = "password")
 	private String password;
+	private boolean isEnabled;
+
 }
