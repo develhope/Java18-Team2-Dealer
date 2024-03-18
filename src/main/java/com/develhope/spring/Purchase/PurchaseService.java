@@ -19,11 +19,6 @@ public class PurchaseService {
     public PurchaseService(VehiclesRepository vehiclesRepository) {
         this.vehiclesRepository = vehiclesRepository;
     }
-
-    @Autowired
-    public PurchaseService(PurchaseRepository purchaseRepository){
-        this.purchaseRepository = purchaseRepository;
-    }
     private OrderRepository orderRepository;
     //Creare acquisto per un utente (Admin)
     public Vehicles createPurchaseForCustomers(Long id, Purchase purchase){
