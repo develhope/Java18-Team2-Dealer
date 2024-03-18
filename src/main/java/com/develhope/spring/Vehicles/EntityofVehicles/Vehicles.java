@@ -1,6 +1,7 @@
 package com.develhope.spring.Vehicles.EntityofVehicles;
 
 import com.develhope.spring.Purchase.Purchase;
+import com.develhope.spring.Rent.Rents;
 import com.develhope.spring.User.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -55,4 +56,6 @@ public class Vehicles {
 	private User users;
 	@ManyToMany
 	private List <Purchase> purchaseList;
+	@ManyToMany
+	private List <Rents> rentList;
 }
