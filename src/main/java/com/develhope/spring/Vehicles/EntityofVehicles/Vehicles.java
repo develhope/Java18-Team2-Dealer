@@ -5,7 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+//Entities to add
+// Rent, Purchase, Order, User
 
 
 @Entity
@@ -17,6 +18,8 @@ public class Vehicles {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
+	@Column(nullable = false, name = "tipo")
+	private VehicleType type;
 	@Column(nullable = false, name = "marchio")
 	private String brand;
 	@Column(nullable = false, name = "modello")

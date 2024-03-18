@@ -2,6 +2,7 @@ package com.develhope.spring.Vehicles;
 
 import com.develhope.spring.Vehicles.EntityofVehicles.Status;
 import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -13,6 +14,11 @@ import java.util.stream.Collectors;
 @Service
 public class VehiclesService {
     private VehiclesRepository vehiclesRepository;
+
+    @Autowired
+    public VehiclesService(VehiclesRepository vehiclesRepository) {
+        this.vehiclesRepository = vehiclesRepository;
+    }
     //Lista veicoli
     public List<Vehicles> getAllVehicles(){
         return vehiclesRepository.findAll();
