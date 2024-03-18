@@ -16,6 +16,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	@Column(nullable = false, name = "ruolo")
+	@Enumerated(EnumType.STRING)
 	private UserEnum role;
 	@Column(nullable = false, name = "nome")
 	private String name;
