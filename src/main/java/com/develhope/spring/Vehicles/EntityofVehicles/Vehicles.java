@@ -5,7 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
+//Entities to add
+// Rent, Purchase, Order, User
 
 
 @Entity
