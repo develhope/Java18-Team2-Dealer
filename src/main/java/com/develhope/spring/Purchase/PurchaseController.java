@@ -21,6 +21,11 @@ public class PurchaseController {
         return purchaseService.createPurchaseForCustomers(id, purchase);
     }
 
+    @GetMapping("/getAll")
+    public List <Purchase> getAllPurchases(){
+        return purchaseService.viewMyPurchase();
+    }
+
     @DeleteMapping("/delete")
     public Purchase deletePurchaseForCustomers(@PathVariable Long id){
         return purchaseService.deletePurchaseForCustomers(id);
