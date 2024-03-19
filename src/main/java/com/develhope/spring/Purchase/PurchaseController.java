@@ -3,6 +3,7 @@ package com.develhope.spring.Purchase;
 import com.develhope.spring.Vehicles.EntityofVehicles.Status;
 import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
 import com.develhope.spring.Vehicles.VehiclesController;
+import io.swagger.v3.oas.annotations.Operation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -15,7 +16,7 @@ public class PurchaseController {
     private PurchaseRepository purchaseRepository;
     @Autowired
     private PurchaseService purchaseService;
-
+    @Operation(summary = "Creates purchase for customers")
     @PostMapping("/create/{id}")
     public Vehicles createPurchaseForCustomers(@PathVariable Long id, @RequestBody Purchase purchase){
         return purchaseService.createPurchaseForCustomers(id, purchase);

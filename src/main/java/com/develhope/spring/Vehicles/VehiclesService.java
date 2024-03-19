@@ -1,6 +1,7 @@
 package com.develhope.spring.Vehicles;
 
 import com.develhope.spring.Vehicles.EntityofVehicles.Status;
+import com.develhope.spring.Vehicles.EntityofVehicles.VehicleType;
 import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -68,10 +69,11 @@ public class VehiclesService {
     }
 
     //Ricercare un veicolo secondo diversi criteri (prezzo, colore, marca, modello, ecc) (Customer)
-    public List<Vehicles> searchForParam(String brand, String model, Integer displacement, String color, String power, String transmissionType,
+    public List<Vehicles> searchForParam(VehicleType type, String brand, String model, Integer displacement, String color, String power, String transmissionType,
                                          Integer yearOfRegistration, String fuelType, Double price, Double discountPrice, String accessories, String condition){
         List<Vehicles> vehicles = vehiclesRepository.findAll();
         return vehicles.stream()
+                .filter(v -> type == null || v.getType().equals(type))
                 .filter(v -> brand == null || v.getBrand().equals(brand))
                 .filter(v -> model == null || v.getModel().equals(model))
                 .filter(v -> displacement == null || v.getDisplacement().equals(displacement))
@@ -80,8 +82,8 @@ public class VehiclesService {
                 .filter(v -> transmissionType == null || v.getTransmissionType().equals(transmissionType))
                 .filter(v -> yearOfRegistration == null || v.getYearOfRegistration().equals(yearOfRegistration))
                 .filter(v -> fuelType == null || v.getFuelType().equals(fuelType))
-                .filter(v -> price <= 0 || v.getPrice() <= price)
-                .filter(v -> discountPrice <= 0 || v.getDiscountPrice() <= discountPrice)
+                .filter(v -> price == null || v.getPrice() <= price)
+                .filter(v -> discountPrice == null || v.getDiscountPrice() <= discountPrice)
                 .filter(v -> accessories == null || v.getAccessories().equals(accessories))
                 .filter(v -> condition == null || v.getCondition().equals(condition))
                 .collect(Collectors.toList());

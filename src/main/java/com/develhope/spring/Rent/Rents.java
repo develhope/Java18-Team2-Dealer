@@ -31,8 +31,8 @@ public class Rents {
     private boolean payed;
     @Column(nullable = false, name = "veicolo_noleggiato")
     private String rentedVehicle;
-    @ManyToMany
-    private List<Vehicles> vehiclesList;
-	@ManyToOne
-	private User users;
+//    @ManyToMany
+//    private List<Vehicles> vehiclesList;
+//	@ManyToOne
+//	private User users;
 }

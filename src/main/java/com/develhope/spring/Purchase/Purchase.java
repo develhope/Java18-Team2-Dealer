@@ -27,8 +27,8 @@ public class Purchase {
     private String status;
     @Column(nullable = false, name = "ordinato/venduto")
     private boolean isSelled;
-    @ManyToMany
-    private List <Vehicles> vehicleList;
-    @ManyToOne
-    private User users;
+//    @ManyToMany
+//    private List <Vehicles> vehicleList;
+//    @ManyToOne
+//    private User users;
 }
