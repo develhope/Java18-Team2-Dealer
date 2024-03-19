@@ -13,6 +13,6 @@ public enum UserEnum {
 
     @Override
     public String toString() {
-        return this.toString();
+        return this.string ;
     }
 }

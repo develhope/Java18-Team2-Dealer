@@ -22,6 +22,7 @@ public class UserRegistrationDetails implements UserDetails {
 		this.password = user.getPassword();
 		this.isEnabled = user.isEnabled();
 		this.authorities = Arrays.stream(user.getRole()
+						.toString()
 						.split(","))
 				.map(SimpleGrantedAuthority::new)
 				.collect(Collectors.toList());
