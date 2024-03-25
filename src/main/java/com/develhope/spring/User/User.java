@@ -28,7 +28,7 @@ public class User {
 	private String email;
 	@Column(nullable = false, name = "password")
 	private String password;
-	public UserDTO toDTO(){
-		return new UserDTO(this.id,this.type,this.name,this.surname,this.phoneNumber,this.email);
-	}
+//	public UserDTO toDTO(){
+//		return new UserDTO(this.id,this.type,this.name,this.surname,this.phoneNumber,this.email);
+//	}
 }

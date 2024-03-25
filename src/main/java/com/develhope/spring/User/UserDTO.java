@@ -27,12 +27,12 @@ public class UserDTO {
     private String email;
 
     public UserDTO(Long id, UserEnum type, String name, String surname, Integer phoneNumber, String email) {
-        this.id = id;
-        this.type = type;
-        this.name = name;
-        this.surname = surname;
-        this.phoneNumber = phoneNumber;
-        this.email = email;
+        this.id = user.getId();
+        this.type = user.getType();
+        this.name = user.getName();
+        this.surname = user.getSurname();
+        this.phoneNumber = user.getPhoneNumber();
+        this.email = user.getEmail();
     }
 
     public UserDTO() {
