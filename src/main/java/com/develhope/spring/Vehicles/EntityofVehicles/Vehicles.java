@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 //Entities to add
 // Rent, Purchase, Order, User
 
@@ -38,9 +40,9 @@ public class Vehicles {
 	@Column(nullable = false, name = "carburante")
 	private String fuelType;
 	@Column(nullable = false, name = "prezzo")
-	private double price;
+	private Double price;
 	@Column(nullable = false, name = "prezzo scontato")
-	private double discountPrice;
+	private Double discountPrice;
 	@Column(nullable = false, name = "accessori")
 	private String accessories;
 	@Column(nullable = false, name = "condizioni")
@@ -48,4 +50,5 @@ public class Vehicles {
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, name = "status")
 	private Status status;
+
 }

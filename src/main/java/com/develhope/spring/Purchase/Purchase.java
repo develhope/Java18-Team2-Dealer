@@ -1,9 +1,14 @@
 package com.develhope.spring.Purchase;
 
+import com.develhope.spring.User.User;
+import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
+
 //Vehicle,
 @Entity
 @Table
@@ -22,4 +27,8 @@ public class Purchase {
     private String status;
     @Column(nullable = false, name = "ordinato/venduto")
     private boolean isSelled;
+//    @ManyToMany
+//    private List <Vehicles> vehicleList;
+//    @ManyToOne
+//    private User users;
 }

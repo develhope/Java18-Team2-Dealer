@@ -1,9 +1,13 @@
 package com.develhope.spring.User;
 
+import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
+
 //Vehicle,
 @Entity
 @Table
@@ -28,5 +32,4 @@ public class User {
 	private String email;
 	@Column(nullable = false, name = "password")
 	private String password;
-
 }
