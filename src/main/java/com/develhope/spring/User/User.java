@@ -32,6 +32,4 @@ public class User {
 	private String email;
 	@Column(nullable = false, name = "password")
 	private String password;
-//	@OneToMany
-//	private List <Vehicles> vehicles;
 }
