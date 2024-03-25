@@ -48,8 +48,7 @@ public class VehiclesDTO {
     public VehiclesDTO() {
     }
 
-    public VehiclesDTO(Vehicles vehicles, Long id, VehicleType type, String brand, String model, Integer displacement, String color, String power, String transmissionType, Integer yearOfRegistration, String fuelType, double price, double discountPrice, String accessories, String condition, Status status) {
-        this.vehicles = vehicles;
+    public VehiclesDTO(Long id, VehicleType type, String brand, String model, Integer displacement, String color, String power, String transmissionType, Integer yearOfRegistration, String fuelType, double price, double discountPrice, String accessories, String condition, Status status) {
         this.id = vehicles.getId();
         this.type = vehicles.getType();
         this.brand = vehicles.getBrand();

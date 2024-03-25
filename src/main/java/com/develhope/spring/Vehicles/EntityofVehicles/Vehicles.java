@@ -1,5 +1,6 @@
 package com.develhope.spring.Vehicles.EntityofVehicles;
 
+import com.develhope.spring.User.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -47,4 +48,6 @@ public class Vehicles {
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, name = "status")
 	private Status status;
+	@OneToMany
+	private User user;
 }

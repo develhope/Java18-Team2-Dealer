@@ -1,6 +1,7 @@
 package com.develhope.spring.Vehicles;
 
 import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
+import com.develhope.spring.Vehicles.EntityofVehicles.VehiclesDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -15,11 +16,11 @@ public class VehiclesController {
 	private VehiclesService vehiclesService;
 
 	@PostMapping("/create")
-	public Vehicles createNew(@RequestBody Vehicles vehicles){
+	public VehiclesDTO createNew(@RequestBody VehiclesDTO vehicles){
 		return vehiclesService.createVehicles(vehicles);
 	}
 	@GetMapping("/all")
-	public List<Vehicles> allVehicles(){
+	public List<VehiclesDTO> allVehicles(){
 		return vehiclesService.getAllVehicles();
 	}
 }

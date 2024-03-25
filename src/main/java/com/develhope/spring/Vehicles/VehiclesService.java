@@ -2,6 +2,7 @@ package com.develhope.spring.Vehicles;
 
 import com.develhope.spring.Vehicles.EntityofVehicles.Status;
 import com.develhope.spring.Vehicles.EntityofVehicles.Vehicles;
+import com.develhope.spring.Vehicles.EntityofVehicles.VehiclesDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class VehiclesService {
@@ -19,18 +21,31 @@ public class VehiclesService {
         this.vehiclesRepository = vehiclesRepository;
     }
     //Lista veicoli
-    public List<Vehicles> getAllVehicles(){
-        return vehiclesRepository.findAll();
+    public List<VehiclesDTO> getAllVehicles(){
+        List<Vehicles> vehicles = vehiclesRepository.findAll();
+        List<VehiclesDTO>vehiclesDTOS = vehicles.stream().map(vehicle -> new VehiclesDTO(vehicle.getId(),vehicle.getType(),vehicle.getBrand(),
+                vehicle.getModel(),vehicle.getDisplacement(),vehicle.getColor(),vehicle.getPower(),
+                vehicle.getTransmissionType(),vehicle.getYearOfRegistration(),vehicle.getFuelType(),
+                vehicle.getPrice(), vehicle.getDiscountPrice(),vehicle.getAccessories(),vehicle.getCondition(),vehicle.getStatus())).toList();
+        return vehiclesDTOS;
     }
 
     //Aggiungere un veicolo (Admin)
-    public Vehicles createVehicles(@RequestBody Vehicles vehicles){
-        Vehicles createdVehicles = vehiclesRepository.save(vehicles);
-        return createdVehicles;
+    public VehiclesDTO createVehicles(VehiclesDTO vehiclesDTO){
+        Vehicles newVehicles = new Vehicles(vehiclesDTO.getId(),vehiclesDTO.getType(),vehiclesDTO.getBrand(),
+                vehiclesDTO.getModel(),vehiclesDTO.getDisplacement(),vehiclesDTO.getColor(),vehiclesDTO.getPower(),
+        vehiclesDTO.getTransmissionType(),vehiclesDTO.getYearOfRegistration(),vehiclesDTO.getFuelType(),
+                vehiclesDTO.getPrice(), vehiclesDTO.getDiscountPrice(),vehiclesDTO.getAccessories(),vehiclesDTO.getCondition(),vehiclesDTO.getStatus());
+               newVehicles= vehiclesRepository.save(newVehicles);
+        return new VehiclesDTO(newVehicles.getId(),newVehicles.getType(),newVehicles.getBrand(),
+                newVehicles.getModel(),newVehicles.getDisplacement(),newVehicles.getColor(),newVehicles.getPower(),
+                newVehicles.getTransmissionType(),newVehicles.getYearOfRegistration(),newVehicles.getFuelType(),
+                newVehicles.getPrice(), newVehicles.getDiscountPrice(),newVehicles.getAccessories(),newVehicles.getCondition(),
+                newVehicles.getStatus());
     }
 
     //Cancellare un veicolo (Admin)
-    public Vehicles deleteAVeicles(@PathVariable Long id){
+    public Vehicles deleteAVeicles(Long id){
         if (vehiclesRepository.existsById(id)) {
             vehiclesRepository.deleteById(id);
         }
