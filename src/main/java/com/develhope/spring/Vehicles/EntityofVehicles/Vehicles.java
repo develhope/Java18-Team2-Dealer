@@ -48,6 +48,4 @@ public class Vehicles {
 	@Enumerated(EnumType.STRING)
 	@Column(nullable = false, name = "status")
 	private Status status;
-	@OneToMany
-	private User user;
 }
